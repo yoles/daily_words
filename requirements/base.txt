@@ -1,0 +1,12 @@
+# DJANGO
+# ------------------------------------------------------------------
+django
+django-environ
+
+# OTHER
+#--------------------------------------------------------------------
+psycopg2-binary
+whitenoise
+Pillow
+coverage
+factory-boy
