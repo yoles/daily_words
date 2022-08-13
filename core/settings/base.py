@@ -20,7 +20,10 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = []
-CORE_APPS = []
+
+CORE_APPS = [
+    "users",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CORE_APPS
 
@@ -153,3 +156,5 @@ LOGGING = {
         },
     },
 }
+
+AUTH_USER_MODEL = "users.User"

@@ -57,15 +57,6 @@ up:	## Start project container
 down: ## Stop project container
 	$(FIG) down
 
-plain-app:   ## make django app name=[name]
-plain-app:
-	$(EXEC) $(SERVICE) bash -c "cd apps && django-admin startapp $(name)"
-
-term-app:	## make django app with user right appname=[name]
-term-app: plain-app
-	sudo chown -R ${USER}:${USER} ./apps/$(name)
-	$(info $(YELLOW)Don't forget to add $(name) into api/setting/base.py$(COLOR_RESET))
-
 container-shell:	## Start container
 container-shell:
 	$(EXEC) -it $(SERVICE)
@@ -114,6 +105,7 @@ connect-db:
 app:	## make django app with user right appname=[name]
 app:
 	cd ./apps && django-admin startapp $(name)
+	sudo chown -R ${USER}:${USER} ./apps/$(name)
 	$(info $(YELLOW)Don't forget to add $(name) into api/setting/base.py$(COLOR_RESET))
 
 color-test:
