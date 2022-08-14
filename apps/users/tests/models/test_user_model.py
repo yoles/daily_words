@@ -24,14 +24,6 @@ class UserModelTests(TestCase):
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user(email=None, phone="+33123456789", password="test")
 
-    def test_create_user_without_phone(self):
-        with self.assertRaises(TypeError):
-            get_user_model().objects.create_user(email="test@exemple.fr", password="test")
-
-    def test_create_user_phone_is_none(self):
-        with self.assertRaises(ValueError):
-            get_user_model().objects.create_user(phone=None, email="test@exemple.fr", password="test")
-
     def test_create_user_without_password(self):
         with self.assertRaises(TypeError):
             get_user_model().objects.create_user(email="test@exemple.fr", phone="+33123456789")
@@ -75,7 +67,6 @@ class UserModelTests(TestCase):
         self.assertEqual(user.first_name, "admin")
         self.assertEqual(user.last_name, "admin")
         self.assertEqual(user.email, "test@exemple.fr")
-        self.assertEqual(user.phone, "0123456789")
         self.assertTrue(user.check_password("test"))
         self.assertTrue(user.is_active)
         self.assertTrue(user.is_staff)
