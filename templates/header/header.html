@@ -1,0 +1,20 @@
+{% load static %}
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+{% endblock %}
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/icons/daily_word.png' %}" alt="Daily words logo" />
+                </a>
+            </li>
+            {% if not request.user.is_anonymous %}
+                {% include 'header/menu/nav_logged.html' %}
+            {% else %}
+                {% include 'header/menu/nav_anonymous.html' %}
+            {% endif %}
+        </ul>
+    </nav>
+</header>
