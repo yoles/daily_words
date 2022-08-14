@@ -6,11 +6,9 @@ from django.utils.translation import gettext_lazy as _
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, email: str, password: str, phone: str, group=None, **extra_fields):
+    def create_user(self, email: str, password: str, phone=None, group=None, **extra_fields):
         if not email:
             raise ValueError(_('The Email must be set'))
-        if not phone:
-            raise ValueError(_('The Phone must be set'))
 
         email = self.normalize_email(email)
         user = self.model(email=email, phone=phone, **extra_fields)
@@ -34,7 +32,7 @@ class UserManager(BaseUserManager):
             raise ValueError(_('Superuser must have is_staff=True.'))
         if extra_fields.get('is_superuser') is not True:
             raise ValueError(_('Superuser must have is_superuser=True.'))
-        return self.create_user(email, password, "0123456789", **extra_fields)
+        return self.create_user(email, password, **extra_fields)
 
 
 class User(AbstractUser, PermissionsMixin):
@@ -47,7 +45,7 @@ class User(AbstractUser, PermissionsMixin):
     password = models.CharField(max_length=255)
     username = None
     phone = models.CharField(
-        max_length=100, unique=True,
+        max_length=100, unique=True, blank=True, null=True,
         error_messages={"unique": _("This phone number already exists.")}
     )
     is_confirm = models.BooleanField(default=False, verbose_name=_("account confirmed"))
