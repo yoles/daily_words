@@ -1,0 +1,12 @@
+header ul, header li, header a {
+    display: flex;
+    align-items: center;
+}
+
+header ul {
+    justify-content: space-around;
+}
+
+header img {
+    width: 100px;
+}
