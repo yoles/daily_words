@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% autoescape off %}
+        Salut,
+        Bienvenue sur Daily Words,
+
+        Pour finaliser votre compte, merci de cliquer sur le lien suivant:
+
+        http://{{ domain }}{% url 'users:activate-account' uidb64=uid token=token %}
+    {% endautoescape %}
+{% endblock %}

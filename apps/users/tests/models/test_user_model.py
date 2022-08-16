@@ -1,6 +1,6 @@
-from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
+from django.test import TestCase
 from users.factories import UserFactory
 
 
@@ -57,8 +57,8 @@ class UserModelTests(TestCase):
         self.assertTrue(user.check_password("test"))
 
     def test_user_str(self):
-        user = UserFactory(first_name="Alain", last_name="Proviste")
-        self.assertEqual(user.__str__(), "Alain Proviste")
+        user = UserFactory(email="A.Proviste@exemple.fr")
+        self.assertEqual(user.__str__(), "A.Proviste@exemple.fr")
 
     def test_create_superuser(self):
         user = get_user_model().objects.create_superuser(

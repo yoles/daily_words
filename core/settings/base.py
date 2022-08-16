@@ -161,4 +161,4 @@ LOGGING = {
 
 AUTH_USER_MODEL = "users.User"
 
-ADMIN_URL = "nimda/1/"
+ADMIN_URL = "nimda/1/admin/"
