@@ -22,6 +22,8 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = []
 
 CORE_APPS = [
+    "dictionaries",
+    "profiles",
     "users",
 ]
 
