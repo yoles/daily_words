@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html >
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+        <style>
+            a {
+                text-decoration: none;
+                color: white;
+            } 
+            /* pour ceux qui supportent les media queries */
+            @media screen and (max-width: 600px) {
+                #main-tab {
+                    width: 300px;
+                }
+	        }
+        </style>
+    </head>
+    <!-- margin-left: 0 -->
+    <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+        <!-- outlook ne gere pas le max-width -->
+        <table width="600" id="main-tab" bgcolor="black" style="color:white; max-width: 600px; margin: auto; border: 4px solid black;" border="0" cellpadding="20" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <table align="center" style="color: white">
+                                <tr>
+                                    <td height="30" style="font-size: 30px; line-height: 30px;">
+                                        &nbsp; <!-- Espace-->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <img src="{% static 'images/icons/daily_word.png' %}" alt="Daily words logo" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="30" style="font-size: 30px; line-height: 30px;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Salut !</td>
+                                </tr>
+                                <tr>
+                                    <td height="30" style="font-size: 30px; line-height: 30px;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi corporis veritatis iure pariatur, reiciendis praesentium voluptates nulla quas! Sapiente in pariatur cupiditate optio nobis, at modi possimus tenetur sequi earum.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table align="center">
+                                            <tr>
+                                                <td align="center" width="430" height="40" bgcolor="#da293c" style="border: 1px solid darkgrey">
+                                                    <a href="http://{{ domain }}{% url 'users:activate-account' uidb64=uid token=token %}" style="color: white;">
+                                                        <b style="color: white;">Confirmer mon compte</b>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="15" style="font-size: 15px; line-height: 15px;">
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" width="430" height="40" bgcolor="black" style="border: 1px solid darkgrey">
+                                                    <a href="#" style="color: white;">
+                                                        <b style="color: white;">
+                                                            http://{{ domain }}{% url 'users:activate-account' uidb64=uid token=token %}
+                                                        </b>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <hr width="90%">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        Copyright Daily Words 2022 - internal use only
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <table align="left" width="30%">
+                                                <tr align="center">
+                                                    <td>
+                                                        <img src="https://via.placeholder.com/100x100" alt="">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table align="left" width="60%">
+                                                <tr>
+                                                    <td>
+                                                        <h2 style="margin: 0;">Welcome Coffee RH</h2>
+                                                        <ul>
+                                                            <li>Un café animer par dsf referent</li>
+                                                            <li>Object Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    Activation du compte | 
+{% endblock %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <h1 class="messages">{{ message }}</h1>
+        {% endfor %}
+    {% else %}
+        <h1>Ouuups ! Il n'y a rien ici</h1>
+    {% endif %}
+    <div class="links">
+        <a href="/">Retourner à L'accueil</a> |
+        <a href="/login">Se Connecter</a>
+    </div>
+{% endblock %}
