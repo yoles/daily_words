@@ -1,5 +1,3 @@
-from unicodedata import category
-
 from dictionaries.factories import CategoryFactory, DictionaryFactory, WordFactory
 from dictionaries.models import Category, Dictionary, Word
 from django.db.utils import IntegrityError
@@ -17,6 +15,10 @@ class CategoryModelTests(TestCase):
     def test_category_creation_without_name(self):
         with self.assertRaises(IntegrityError):
             Category.objects.create()
+
+    def test_category_str(self):
+        category = CategoryFactory(name="test")
+        self.assertEqual(category.__str__(), "test")
 
 
 class DictionaryModelTests(TestCase):
@@ -41,6 +43,13 @@ class DictionaryModelTests(TestCase):
     def test_dictionary_creation_without_category(self):
         with self.assertRaises(IntegrityError):
             Dictionary.objects.create(profile=self.profile)
+
+    def test_dictionary_str(self):
+        self.profile.user.email = "test@example.fr"
+        self.profile.user.save()
+        dictionary = DictionaryFactory(profile=self.profile, category=self.category)
+        self.assertEqual(dictionary.words.count(), 0)
+        self.assertEqual(dictionary.__str__(), "Test - 0 - test@example.fr")
 
 
 class WordModelTests(TestCase):
@@ -73,3 +82,7 @@ class WordModelTests(TestCase):
         self.assertEqual(Word.objects.count(), 1)
         self.assertIn("title", word.title)
         self.assertIsNotNone(word.dictionary)
+
+    def test_word_str(self):
+        word = WordFactory(title="example")
+        self.assertEqual(word.__str__(), "example")
