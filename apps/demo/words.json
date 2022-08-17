@@ -1,0 +1,62 @@
+[
+  {
+    "title": "shallow",
+    "definition": "Superficiel",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "deep",
+    "definition": "profond, loin",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "blueprint",
+    "definition": "plan",
+    "is_known": true,
+    "last_played": "2022-8-17"
+  },
+  {
+    "title": "form",
+    "definition": "formulaire",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "dictionary",
+    "definition": "dictionnaire",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "write",
+    "definition": "écrire",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "pool",
+    "definition": "Piscine",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "butterfly",
+    "definition": "papillon",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "main",
+    "definition": "principal",
+    "is_known": false,
+    "last_played": null
+  },
+  {
+    "title": "play",
+    "definition": "jouer",
+    "is_known": false,
+    "last_played": null
+  }
+]
