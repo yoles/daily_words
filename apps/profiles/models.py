@@ -1,8 +1,6 @@
 from django.conf import settings
 from django.db import models
 
-from users.models import User
-
 
 class Profile(models.Model):
     class Meta:
@@ -13,4 +11,6 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
     )
     # Dictionaries
-    # default_dictionnary
+
+    def __str__(self):
+        return f"{self.user.email}"
